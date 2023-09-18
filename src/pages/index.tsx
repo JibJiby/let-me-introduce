@@ -8,9 +8,17 @@ const inter = Inter({ subsets: ['latin'] })
  */
 
 const icons = [
-  { src: '/github-icon.png', alt: 'github icon' },
-  { src: '/house-icon.png', alt: 'house icon' },
-  { src: '/notion-icon.png', alt: 'notion icon' },
+  {
+    src: '/github-icon.png',
+    alt: 'github icon',
+    url: 'https://github.com/jibjiby',
+  },
+  { src: '/house-icon.png', alt: 'house icon', url: 'https://jiby.blog/' },
+  {
+    src: '/notion-icon.png',
+    alt: 'notion icon',
+    url: 'https://jiby.notion.site/2190b56418c845d592b675eb12869074?pvs=4',
+  },
 ]
 
 export default function Home() {
@@ -18,27 +26,32 @@ export default function Home() {
     <main className={`flex h-full flex-col ${inter.className}`}>
       <div className="flex items-center justify-center select-none">jiby</div>
       <div className="min-h-[60px] fixed bottom-2 w-full px-6 select-none flex justify-center">
-        <div
-          className="flex flex-row w-full h-full max-w-lg px-4 py-3 space-x-4 rounded-xl justify-evenly"
+        <footer
+          className="flex flex-row w-full h-full max-w-lg px-4 py-3 space-x-4 rounded-2xl justify-evenly"
           style={{
             backgroundColor: 'rgba(51, 51, 51, 0.4)',
             boxShadow: 'rgba(0, 0, 0, 0.4) 0px 30px 90px',
           }}
         >
           {icons.map((icon) => (
-            <IconBox key={icon.src}>
-              <Image alt={icon.alt} src={icon.src} height={40} width={40} />
-            </IconBox>
+            <a
+              key={icon.src}
+              href={icon.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconBox>
+                <Image alt={icon.alt} src={icon.src} height={40} width={40} />
+              </IconBox>
+            </a>
           ))}
-        </div>
+        </footer>
       </div>
     </main>
   )
 }
 
-type Props = {
-  children: React.ReactNode
-}
+type Props = React.ComponentProps<'div'>
 
 function IconBox({ children }: Props) {
   return (
