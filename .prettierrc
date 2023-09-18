@@ -1,0 +1,29 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrder": [
+    "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(next$)",
+    "<THIRD_PARTY_MODULES>",
+
+    "^types$",
+    "^@/components/ui/(.*)$",
+    "^@/components/(.*)$",
+    "^@/types/(.*)$",
+    "^@/config/(.*)$",
+    "^@/lib/(.*)$",
+    "^@/utils/(.*)$",
+    "^@/hooks/(.*)$",
+    "^@/styles/(.*)$",
+    "^(@/)(.*)$",
+
+    "^[./]",
+    "^[../]"
+  ],
+
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
+}
