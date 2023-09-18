@@ -1,6 +1,13 @@
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
+
 const inter = Inter({ subsets: ['latin'] })
 
 /**
@@ -12,12 +19,19 @@ const icons = [
     src: '/github-icon.png',
     alt: 'github icon',
     url: 'https://github.com/jibjiby',
+    tooltip: 'Github',
   },
-  { src: '/house-icon.png', alt: 'house icon', url: 'https://jiby.blog/' },
+  {
+    src: '/house-icon.png',
+    alt: 'house icon',
+    url: 'https://jiby.blog/',
+    tooltip: 'Blog',
+  },
   {
     src: '/notion-icon.png',
     alt: 'notion icon',
     url: 'https://jiby.notion.site/2190b56418c845d592b675eb12869074?pvs=4',
+    tooltip: 'Notion',
   },
 ]
 
@@ -34,16 +48,29 @@ export default function Home() {
           }}
         >
           {icons.map((icon) => (
-            <a
+            <TooltipProvider
               key={icon.src}
-              href={icon.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              delayDuration={0}
+              disableHoverableContent
             >
-              <IconBox>
-                <Image alt={icon.alt} src={icon.src} height={40} width={40} />
-              </IconBox>
-            </a>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a href={icon.url} target="_blank" rel="noopener noreferrer">
+                    <IconBox>
+                      <Image
+                        alt={icon.alt}
+                        src={icon.src}
+                        height={40}
+                        width={40}
+                      />
+                    </IconBox>
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <strong>{icon.tooltip}</strong>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           ))}
         </footer>
       </div>
