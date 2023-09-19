@@ -46,6 +46,11 @@ export default function Home() {
     <>
       <Head>
         <title>Let me Introduce</title>
+        <meta name="author" content="jibjiby" />
+        <meta name="description" content="간단한 자기 소개 페이지 입니다." />
+
+        {/* open graph metadata */}
+        <meta property="og:title" content="JibJiby의 소개 페이지" />
       </Head>
       <main className={`flex h-full flex-col ${inter.className}`}>
         <section className="flex items-center justify-center w-full h-full px-16 sm:px-[25%] md:px-[30%] select-none">
