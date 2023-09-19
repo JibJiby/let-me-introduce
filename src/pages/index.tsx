@@ -42,8 +42,8 @@ const icons = [
 export default function Home() {
   return (
     <main className={`flex h-full flex-col ${inter.className}`}>
-      <section className="flex items-center justify-center w-full h-full select-none">
-        <div className="flex flex-col">
+      <section className="flex items-center justify-center w-full h-full px-24 lg:px-[30%] select-none">
+        <div className="flex flex-col w-full">
           <TypeAnimation
             className="text-3xl font-light"
             sequence={['안녕하세요']}
@@ -52,7 +52,7 @@ export default function Home() {
           <div>
             <TypeAnimation
               className="inline-block text-3xl font-semibold"
-              sequence={[1500, 'UX 지향적인', 2000, '성장형']}
+              sequence={[1500, 'UX 지향적인', 2000, '날마다 성장하기를 즐기는']}
               repeat={Infinity}
               cursor
             />
