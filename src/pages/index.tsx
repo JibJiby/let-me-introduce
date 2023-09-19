@@ -1,6 +1,8 @@
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 
+import { TypeAnimation } from 'react-type-animation'
+
 import {
   Tooltip,
   TooltipContent,
@@ -39,7 +41,31 @@ export default function Home() {
   return (
     <main className={`flex h-full flex-col ${inter.className}`}>
       <section className="flex items-center justify-center w-full h-full select-none">
-        jiby
+        <div className="flex flex-col">
+          <TypeAnimation
+            className="text-3xl font-light"
+            sequence={['안녕하세요']}
+            cursor={false}
+          />
+          <div>
+            <TypeAnimation
+              className="inline-block text-3xl font-semibold"
+              sequence={[1500, 'UX 지향적인', 2000, '성장형']}
+              repeat={Infinity}
+              cursor
+            />
+            <TypeAnimation
+              className="inline-block text-3xl font-light"
+              sequence={[2500, '개발자']}
+              cursor={false}
+            />
+          </div>
+          <TypeAnimation
+            className="text-3xl font-light"
+            sequence={[3000, '김성집 입니다.']}
+            cursor={false}
+          />
+        </div>
       </section>
       <footer className="min-h-[60px] fixed bottom-2 w-full px-6 select-none flex justify-center">
         <div
