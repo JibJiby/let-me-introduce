@@ -23,6 +23,7 @@
     "next": "13.4.12",
     "postcss": "8.4.27",
     "react": "18.2.0",
+    "react-animated-cursor": "^2.8.1",
     "react-dom": "18.2.0",
     "react-type-animation": "^3.1.0",
     "tailwind-merge": "^1.14.0",
