@@ -18,6 +18,8 @@ import { CustomCursor } from '@/components/custom-cursor'
 import { IconBox } from '@/components/icon-box'
 import { ThemeSwitch } from '@/components/theme-switch'
 
+import { useCSR } from '@/hooks/use-csr'
+
 const inter = Inter({ subsets: ['latin'] })
 
 /**
@@ -138,7 +140,7 @@ export default function Home() {
 }
 
 function ThemeToggle() {
-  const [isClientEnv, setIsClientEnv] = useState(false)
+  const isClientEnv = useCSR()
   const { setTheme, resolvedTheme } = useTheme()
 
   const toggle = useCallback(() => {
@@ -149,17 +151,14 @@ function ThemeToggle() {
     }
   }, [resolvedTheme, setTheme])
 
-  useEffect(() => {
-    setIsClientEnv(true)
-  }, [])
-
   if (!isClientEnv) {
     return null
   }
 
   return (
-    <div className="absolute select-none top-4 right-4">
+    <div className="absolute select-none top-4 right-4 cursor-none">
       <ThemeSwitch
+        className="cursor-none"
         checked={resolvedTheme !== 'system' && resolvedTheme === 'light'}
         onClick={toggle}
       />
