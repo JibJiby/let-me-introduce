@@ -34,6 +34,9 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+
+    --switch: #ced4da;
+    --switch-foreground: #495057;
   }
 
   .dark {
@@ -65,6 +68,9 @@
     --destructive-foreground: 0 85.7% 97.3%;
 
     --ring: 217.2 32.6% 17.5%;
+
+    --switch: #f8f9fa;
+    --switch-foreground: #adb5bd;
   }
 }
 
