@@ -1,15 +1,31 @@
-import { useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
+import { useTheme } from 'next-themes'
 import AnimationCursor from 'react-animated-cursor'
 
+import { useCSR } from '@/hooks/use-csr'
+
+const colors = {
+  light: '48, 49, 52',
+  dark: '233, 236, 239',
+}
+
 export function CustomCursor() {
-  const [isRendered, setIsRendered] = useState(false)
+  const [cursorColor, setCursorColor] = useState('')
+  const { resolvedTheme } = useTheme()
+  const isClientEnv = useCSR()
 
-  useLayoutEffect(() => {
-    setIsRendered(true)
-  }, [])
+  useEffect(() => {
+    setCursorColor(
+      resolvedTheme === 'light'
+        ? colors.light
+        : resolvedTheme === 'dark'
+        ? colors.dark
+        : ''
+    )
+  }, [resolvedTheme])
 
-  if (!isRendered) {
+  if (!isClientEnv) {
     return
   }
 
@@ -18,10 +34,11 @@ export function CustomCursor() {
       innerStyle={{
         backgroundColor: 'transparent',
       }}
-      color="48, 49, 52"
+      color={cursorColor}
       outerSize={40}
       outerScale={2}
-      clickables={['a']}
+      trailingSpeed={9}
+      clickables={['a', 'button']}
     />
   )
 }
