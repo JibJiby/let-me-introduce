@@ -56,13 +56,13 @@ export default function Home() {
         <section className="flex items-center justify-center w-full h-full px-16 sm:px-[25%] md:px-[30%] select-none">
           <div className="flex flex-col w-full">
             <TypeAnimation
-              className="text-3xl font-light text-[#333]"
+              className="text-3xl font-light text-[#333] dark:text-white"
               sequence={['안녕하세요']}
               cursor={false}
             />
             <div>
               <TypeAnimation
-                className="inline-block text-3xl font-semibold text-[#333] break-keep"
+                className="inline-block text-3xl font-semibold text-[#333] break-keep dark:text-white"
                 sequence={[
                   1500,
                   'UX 지향적인',
@@ -73,13 +73,13 @@ export default function Home() {
                 cursor
               />
               <TypeAnimation
-                className="inline-block text-3xl font-light text-[#333]"
+                className="inline-block text-3xl font-light text-[#333] dark:text-white"
                 sequence={[2500, '개발자']}
                 cursor={false}
               />
             </div>
             <TypeAnimation
-              className="text-3xl font-light text-[#333]"
+              className="text-3xl font-light text-[#333] dark:text-white"
               sequence={[3000, '김성집 입니다.']}
               cursor={false}
             />
