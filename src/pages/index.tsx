@@ -69,6 +69,10 @@ export default function Home() {
                   'UX 지향적인',
                   2000,
                   '날마다 성장하기를 즐기는',
+                  2000,
+                  '주변에 공유하며, 같이 성장하는',
+                  2000,
+                  '문제 해결을 위해 치열하게 고민하는',
                 ]}
                 repeat={Infinity}
                 cursor
