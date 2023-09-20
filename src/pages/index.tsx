@@ -1,7 +1,10 @@
+import { useCallback, useEffect, useState } from 'react'
+
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Image from 'next/image'
 
+import { useTheme } from 'next-themes'
 import { TypeAnimation } from 'react-type-animation'
 
 import {
@@ -13,6 +16,7 @@ import {
 
 import { CustomCursor } from '@/components/custom-cursor'
 import { IconBox } from '@/components/icon-box'
+import { ThemeSwitch } from '@/components/theme-switch'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -127,6 +131,38 @@ export default function Home() {
         </footer>
       </main>
       <CustomCursor />
+      {/* TODO: 컴포넌트로 분리 */}
+      <ThemeToggle />
     </>
+  )
+}
+
+function ThemeToggle() {
+  const [isClientEnv, setIsClientEnv] = useState(false)
+  const { setTheme, resolvedTheme } = useTheme()
+
+  const toggle = useCallback(() => {
+    if (resolvedTheme === 'light') {
+      setTheme('dark')
+    } else {
+      setTheme('light')
+    }
+  }, [resolvedTheme, setTheme])
+
+  useEffect(() => {
+    setIsClientEnv(true)
+  }, [])
+
+  if (!isClientEnv) {
+    return null
+  }
+
+  return (
+    <div className="absolute select-none top-4 right-4">
+      <ThemeSwitch
+        checked={resolvedTheme !== 'system' && resolvedTheme === 'light'}
+        onClick={toggle}
+      />
+    </div>
   )
 }
