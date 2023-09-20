@@ -92,9 +92,8 @@ export default function Home() {
         </section>
         <footer className="min-h-[60px] fixed bottom-2 w-full px-6 select-none flex justify-center">
           <div
-            className="flex flex-row w-full h-full max-w-md px-4 py-3 rounded-2xl justify-evenly"
+            className="flex flex-row w-full h-full max-w-md px-4 py-3 rounded-2xl justify-evenly bg-[#333]/40  dark:bg-white/50"
             style={{
-              backgroundColor: 'rgba(51, 51, 51, 0.4)',
               boxShadow: 'rgba(0, 0, 0, 0.4) 0px 30px 90px',
             }}
           >
