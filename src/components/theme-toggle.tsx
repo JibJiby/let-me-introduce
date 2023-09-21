@@ -26,7 +26,7 @@ export function ThemeToggle() {
     <div className="absolute select-none top-4 right-4 cursor-none">
       <ThemeSwitch
         className="cursor-none"
-        checked={resolvedTheme !== 'system' && resolvedTheme === 'light'}
+        checked={resolvedTheme !== 'system' && resolvedTheme === 'dark'}
         onClick={toggle}
       />
     </div>
