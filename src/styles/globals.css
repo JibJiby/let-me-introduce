@@ -35,8 +35,11 @@
 
     --radius: 0.5rem;
 
+    /*  */
     --switch: #ced4da;
     --switch-foreground: #495057;
+
+    --type-animation: #333;
   }
 
   .dark {
@@ -69,8 +72,11 @@
 
     --ring: 217.2 32.6% 17.5%;
 
+    /*  */
     --switch: #f8f9fa;
     --switch-foreground: #adb5bd;
+
+    --type-animation: #fff;
   }
 }
 
