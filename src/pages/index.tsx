@@ -67,14 +67,16 @@ export default function Home() {
                 sequence={[
                   1500,
                   'UX 지향적인',
-                  2000,
+                  2500,
                   '날마다 성장하기를 즐기는',
-                  2000,
+                  2500,
                   '주변에 공유하며, 같이 성장하는',
-                  2000,
+                  2500,
                   '문제 해결을 위해 치열하게 고민하는',
                 ]}
                 repeat={Infinity}
+                speed={25}
+                deletionSpeed={20}
                 cursor
               />
               <TypeAnimation
