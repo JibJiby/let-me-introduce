@@ -15,32 +15,13 @@ import { CustomCursor } from '@/components/custom-cursor'
 import { IconBox } from '@/components/icon-box'
 import { ThemeToggle } from '@/components/theme-toggle'
 
+import { icons } from '@/constants/icons'
+
 const inter = Inter({ subsets: ['latin'] })
 
 /**
  * 그림자 : https://getcssscan.com/css-box-shadow-examples
  */
-
-const icons = [
-  {
-    src: '/github-icon.png',
-    alt: 'github icon',
-    url: 'https://github.com/jibjiby',
-    tooltip: 'Github',
-  },
-  {
-    src: '/house-icon.png',
-    alt: 'house icon',
-    url: 'https://jiby.blog/',
-    tooltip: 'Blog',
-  },
-  {
-    src: '/notion-icon.png',
-    alt: 'notion icon',
-    url: 'https://jiby.notion.site/2190b56418c845d592b675eb12869074?pvs=4',
-    tooltip: 'Notion',
-  },
-]
 
 export default function Home() {
   return (
