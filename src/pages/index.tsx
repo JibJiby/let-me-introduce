@@ -33,6 +33,10 @@ export default function Home() {
 
         {/* open graph metadata */}
         <meta property="og:title" content="JibJiby의 소개 페이지" />
+        <meta
+          property="og:image"
+          content="https://user-images.githubusercontent.com/24295703/269464174-d4b2c21e-be92-4440-8960-3aa92737495a.png"
+        />
       </Head>
       <main className={`flex h-full flex-col ${inter.className}`}>
         <section className="flex items-center justify-center w-full h-full px-16 sm:px-[25%] md:px-[30%] select-none">
