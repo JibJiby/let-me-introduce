@@ -51,7 +51,9 @@ export default function Home() {
                 className="inline-block text-3xl font-semibold break-keep text-type-animation"
                 sequence={[
                   1500,
-                  'UX 지향적인',
+                  '제품 중심으로 사고하는',
+                  2500,
+                  '유저 입장에서 UX를 바라보는',
                   2500,
                   '날마다 성장하기를 즐기는',
                   2500,
